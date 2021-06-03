@@ -4,6 +4,41 @@
 
 This is a simple CLI tool to help automate deployment of new relayers.
 
+## Build/Install
+
+```shell
+make build
+```
+
+OR
+
+```shell
+make install
+```
+
+## Usage
+
+```shell
+./build/cfgBuilder <input-file> <output-path>
+# Example
+mkdir ./relayers && ./build/cfgBuilder Example_HQSWY.json ./relayers
+ls ./relayers
+```
+
+OR
+
+```shell
+cfgBuilder <input-file> <output-path>
+```
+
+### Clean
+
+```shell
+make clean
+```
+
+## Example
+
 An input JSON config looks like this:
 
 ```json
@@ -113,36 +148,3 @@ An input JSON config looks like this:
 ```
 
 This example would result in five configs, one for each relayer, with each containing the three provided chains.
-
-## Build/Install
-
-```shell
-make build
-```
-
-OR
-
-```shell
-make install
-```
-
-## Usage
-
-```shell
-./build/cfgBuilder <input-file> <output-path>
-# Example
-mkdir ./relayers && ./build/cfgBuilder Example_HQSWY.json ./relayers
-ls ./relayers
-```
-
-OR
-
-```shell
-cfgBuilder <input-file> <output-path>
-```
-
-## Clean
-
-```shell
-make clean
-```
