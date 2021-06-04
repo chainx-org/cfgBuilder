@@ -82,7 +82,7 @@
       },
       {
         "name":       "kusama_kusama",
-        "chainId":    "201",
+        "chainId":    "202",
         "endpoint":   [
           "ws://localhost:9945"
         ],
