@@ -52,6 +52,7 @@ type Opts struct {
 	MaxGasPrice    string `json:"maxGasPrice,omitempty"`
 	GasMultiplier  string `json:"gasMultiplier,omitempty"`
 	StartBlock     string `json:"startBlock,omitempty"`
+	EndBlock       string `json:"endBlock,omitempty"`
 	Http           string `json:"http,omitempty"`
 	Prefix		   string `json:"prefix,omitempty"`
 	NetworkId      string `json:"networkId,omitempty"`
@@ -81,10 +82,10 @@ type EthChainConfig struct {
 	MaxGasPrice    string   	`json:"maxGasPrice"`
 	GasMultiplier  string   	`json:"gasMultiplier"`
 	StartBlock     string   	`json:"startBlock"`
+	EndBlock       string       `json:"endBlock"`
 	Http           string   	`json:"http"`
 	Prefix		   string   	`json:"prefix"`
 	NetworkId      string   	`json:"networkId"`
-
 	Relayers       []string 	`json:"relayers"`
 }
 
@@ -94,6 +95,7 @@ type SubChainConfig struct {
 	Endpoint   []string   		`json:"endpoint"`
 
 	StartBlock string   		`json:"startBlock"`
+	EndBlock   string           `json:"endBlock"`
 	/// MultiSig Opts
 	MultiSigAddress		string `json:"multiSigAddress"`
 	TotalRelayer 		string `json:"totalRelayer"`
@@ -151,6 +153,7 @@ func constructEthChainConfig(cfg EthChainConfig, relayer string) RawChainConfig 
 			MaxGasPrice:    cfg.MaxGasPrice,
 			GasMultiplier:  cfg.GasMultiplier,
 			StartBlock:     cfg.StartBlock,
+			EndBlock:       cfg.EndBlock,
 			Http:           cfg.Http,
 			Prefix: 		cfg.Prefix,
 			NetworkId: 		cfg.NetworkId,
@@ -171,6 +174,7 @@ func constructSubChainConfig(cfg SubChainConfig, relayer string, relayerId int, 
 		Endpoint: cfg.Endpoint,
 		Opts: Opts{
 			StartBlock: cfg.StartBlock,
+			EndBlock: cfg.EndBlock,
 			/// MultiSig Opts
 			MultiSigAddress: cfg.MultiSigAddress,
 			TotalRelayer: cfg.TotalRelayer,
